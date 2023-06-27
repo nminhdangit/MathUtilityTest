@@ -22,20 +22,13 @@ public class MathUtility {
     //20! vừa đủ cho long
     //21! 22! 23! > 20! -> ném ra Exception 
     public static long getFactorial(int n) {
-//        if(n < 0){
-//            
-//        }else if (n == 0){
-//            
-//        }else{
-//            
-//        }
         if(n < 0 || n > 20)
             throw new IllegalArgumentException("Wrong parament");
-        long num = 1;
-        for (int i = 1; i <= n; i++) {
-            num *= i;
-        }
-        return num;
+        
+        if(n == 0 || n == 1)
+            return 1;
+        
+        return n * getFactorial(n - 1);
     }
 
 }
